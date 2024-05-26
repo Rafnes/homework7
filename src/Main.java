@@ -7,6 +7,7 @@ public class Main {
         while (totalTask1 <= 2_459_000) {
             monthNumberTask1++;
             totalTask1 += depositTask1;
+            totalTask1 += totalTask1 / 100;
             System.out.println("Месяц " + monthNumberTask1 + ", сумма накоплений равна " + totalTask1);
         }
         System.out.println();
@@ -41,11 +42,11 @@ public class Main {
 
         //Задание 4
         double depositTask4 = 15000.00;
-        double percentTask4 = 1.07;
+        double percent = 1.07; //одинаковый процент для заданий 4, 5 и 6
         int goalTask4 = 12_000_000;
         int monthsNumberTask4 = 1;
         while (depositTask4 < goalTask4) {
-            depositTask4 *= percentTask4;
+            depositTask4 *= percent;
             System.out.printf("Месяц %s, накопления: %.2f рублей%n", monthsNumberTask4, depositTask4);
             monthsNumberTask4++;
         }
@@ -53,11 +54,10 @@ public class Main {
 
         //Задание 5
         double depositTask5 = 15000.00;
-        double percentTask5 = 1.07;
         int goalTask5 = 12_000_000;
         int monthsNumberTask5 = 1;
         while (depositTask5 < goalTask5) {
-            depositTask5 *= percentTask5;
+            depositTask5 *= percent;
             if (monthsNumberTask5 % 6 == 0) {
                 System.out.printf("Месяц %s, накопления: %.2f рублей%n", monthsNumberTask5, depositTask5);
             }
@@ -67,10 +67,9 @@ public class Main {
 
         //Задание 6
         double depositTask6 = 15000.0;
-        double percentTask6 = 1.07;
         int monthsToGoal = 9 * 12; //по 12 месяцев за 9 лет - целевое количество месяцев
         for (int i = 1; i <= monthsToGoal; i++) {
-            depositTask6 *= percentTask6;
+            depositTask6 *= percent;
             if (i % 6 == 0) {
                 System.out.printf("Месяц %s, накопления: %.2f рублей %n", i, depositTask6);
             }
